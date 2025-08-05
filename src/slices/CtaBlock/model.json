@@ -1,0 +1,37 @@
+{
+  "id": "cta_block",
+  "type": "SharedSlice",
+  "name": "CtaBlock",
+  "description": "CtaBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "Demandez une estimation !",
+            "placeholder": ""
+          }
+        },
+        "contact": {
+          "type": "Link",
+          "config": {
+            "label": "contact",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

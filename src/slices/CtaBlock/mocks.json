@@ -1,0 +1,23 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"cta_text": {
+				"__TYPE__": "FieldContent",
+				"value": "seen",
+				"type": "Text"
+			},
+			"contact": {
+				"__TYPE__": "LinkContent",
+				"key": "865f8fbd-83c9-49a9-aa62-08a78913b8e9",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "gift"
+				}
+			}
+		},
+		"items": []
+	}
+]

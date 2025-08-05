@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type RealEstatePricesDocumentDataSlicesSlice =
+  | CtaBlockSlice
   | FaqSlice
   | NeighborhoodsListSlice
   | VariationBlockSlice
@@ -140,6 +141,67 @@ export type RealEstatePricesDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = RealEstatePricesDocument;
+
+/**
+ * Primary content in *CtaBlock → Default → Primary*
+ */
+export interface CtaBlockSliceDefaultPrimary {
+  /**
+   * Demandez une estimation ! field in *CtaBlock → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.default.primary.cta_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cta_text: prismic.KeyTextField;
+
+  /**
+   * contact field in *CtaBlock → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.default.primary.contact
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  contact: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for CtaBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CtaBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CtaBlock*
+ */
+type CtaBlockSliceVariation = CtaBlockSliceDefault;
+
+/**
+ * CtaBlock Shared Slice
+ *
+ * - **API ID**: `cta_block`
+ * - **Description**: CtaBlock
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CtaBlockSlice = prismic.SharedSlice<
+  "cta_block",
+  CtaBlockSliceVariation
+>;
 
 /**
  * Item in *Faq → Default → Primary → FAQS*
@@ -450,6 +512,10 @@ declare module "@prismicio/client" {
       RealEstatePricesDocumentData,
       RealEstatePricesDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CtaBlockSlice,
+      CtaBlockSliceDefaultPrimary,
+      CtaBlockSliceVariation,
+      CtaBlockSliceDefault,
       FaqSlice,
       FaqSliceDefaultPrimaryFaqsItem,
       FaqSliceDefaultPrimary,
