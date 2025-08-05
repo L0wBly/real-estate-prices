@@ -1,0 +1,37 @@
+{
+  "id": "price_block",
+  "type": "SharedSlice",
+  "name": "PriceBlock",
+  "description": "PriceBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "apartment_price": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Prix moyen m² Appart",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "house_price": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Prix moyen m² Maison",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

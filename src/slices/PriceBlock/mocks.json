@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"apartment_price": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ea culpa et anim labore ea magna duis eu voluptate deserunt irure occaecat Lorem labore. Aute nostrud minim nulla aliquip labore ut aliquip nulla enim. Exercitation anim et sint tempor qui culpa esse sunt elit anim aliquip."
+						}
+					}
+				]
+			},
+			"house_price": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit velit aute elit cupidatat nisi deserunt sit dolor. Laborum sunt officia cillum pariatur deserunt anim reprehenderit incididunt est adipisicing duis officia."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

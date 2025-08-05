@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"price_variation": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim aliquip elit aute magna commodo nulla sint pariatur nostrud. Cillum non anim duis aute sit occaecat culpa adipisicing sunt velit aliquip sunt nulla dolor nulla."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
