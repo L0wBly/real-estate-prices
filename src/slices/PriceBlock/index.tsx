@@ -6,7 +6,7 @@ export type PriceBlockProps = SliceComponentProps<Content.PriceBlockSlice>;
 
 const PriceBlock: FC<PriceBlockProps> = ({ slice }) => {
   return (
-    <section className="bg-[#f9fafb] py-20">
+    <section className="bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 py-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl sm:text-4xl font-semibold text-slate-800 mb-12">
           Prix moyens au m²

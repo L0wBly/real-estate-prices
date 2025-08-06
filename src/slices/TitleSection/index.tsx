@@ -6,7 +6,7 @@ export type TitleSectionProps = SliceComponentProps<Content.TitleSectionSlice>;
 
 const TitleSection: FC<TitleSectionProps> = ({ slice }) => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden bg-white">
       {/* Background image with blur and dark overlay */}
       <div
         className="absolute inset-0 bg-center bg-cover blur-[1px] scale-105 z-1"

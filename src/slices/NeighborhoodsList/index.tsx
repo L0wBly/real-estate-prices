@@ -31,7 +31,7 @@ const NeighborhoodsList: FC<NeighborhoodsListProps> = ({ slice }) => {
 
 
   return (
-    <section className="relative py-28 bg-gray-50">
+    <section className="relative py-28 bg-[#e7f0f4]">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-16 tracking-tight">
           Quartiers les plus demandés
