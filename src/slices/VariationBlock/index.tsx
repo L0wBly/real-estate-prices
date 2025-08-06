@@ -1,26 +1,61 @@
+"use client";
 import { FC } from "react";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 
 export type VariationBlockProps = SliceComponentProps<Content.VariationBlockSlice>;
 
 const VariationBlock: FC<VariationBlockProps> = ({ slice }) => {
+  // Simulated data – replace with real API/prismic data later
+  const variationData = [
+    { month: "Sept", value: 0 },
+    { month: "Oct", value: 0.4 },
+    { month: "Nov", value: 0.7 },
+    { month: "Dec", value: 1.1 },
+    { month: "Jan", value: 1.6 },
+    { month: "Feb", value: 1.8 },
+    { month: "Mar", value: 2.1 },
+    { month: "Apr", value: 2.0 },
+    { month: "May", value: 2.5 },
+    { month: "Jun", value: 2.8 },
+    { month: "Jul", value: 3.5 },
+    { month: "Aug", value: 3.2 },
+  ];
+
   return (
-    <section className="py-10 bg-white">
-      <div className="max-w-3xl mx-auto text-center px-4">
-        <h2 className="text-2xl font-bold mb-4 text-blue-800">
+    <section className="bg-white py-20 px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">
           Variation des prix sur 12 mois
         </h2>
 
-        <div className="inline-block px-6 py-4 bg-blue-50 border border-blue-200 rounded-xl shadow">
-          <PrismicRichText
-            field={slice.primary.price_variation}
-            components={{
-              paragraph: ({ children }) => (
-                <p className="text-xl font-semibold text-blue-900">{children}</p>
-              ),
-            }}
-          />
+        <p className="text-sm text-gray-500 mb-8">
+          Données simulées entre septembre 2024 et août 2025
+        </p>
+
+        <div className="bg-gray-50 rounded-xl shadow-sm p-4">
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={variationData}>
+              <XAxis dataKey="month" />
+              <YAxis
+                domain={["auto", "auto"]}
+                tickFormatter={(value) => `${value.toFixed(1)}%`}
+              />
+              <Tooltip
+                formatter={(value: number) => `${value.toFixed(2)}%`}
+                labelClassName="font-medium text-sm"
+              />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#6366f1"
+                strokeWidth={3}
+                dot={{ r: 4 }}
+                activeDot={{ r: 6 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </section>
