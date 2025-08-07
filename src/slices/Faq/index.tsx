@@ -1,49 +1,97 @@
-import { FC } from "react";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { Content } from "@prismicio/client";
+'use client'
 
-export type FaqProps = SliceComponentProps<Content.FaqSlice>;
+import { FC, useState } from 'react'
+import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
+import { Content } from '@prismicio/client'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+
+export type FaqProps = SliceComponentProps<Content.FaqSlice>
 
 const Faq: FC<FaqProps> = ({ slice }) => {
-  const faqs = slice.primary.faqs || [];
+  const faqs = slice.primary.faqs || []
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const toggleIndex = (index: number) => {
+    setOpenIndex(prev => (prev === index ? null : index))
+  }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="relative py-28 bg-gradient-to-br from-white via-gray-50 to-white">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Questions fréquentes</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
+          Questions fréquentes
+        </h2>
 
-        {faqs.length === 0 ? (
-          <p className="text-center text-red-500">Aucune FAQ renseignée.</p>
-        ) : (
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
+        <div className="space-y-6">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+
+            return (
               <div
                 key={index}
-                className="border rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                className={`rounded-xl border shadow-md transition hover:shadow-lg 
+                ${isOpen ? 'bg-violet-50' : 'bg-white '}`}
               >
-                <h3 className="text-xl font-semibold text-indigo-700 mb-2">
-                  {faq.question || "❓ Question manquante"}
-                </h3>
+                {/* Header clickable */}
+                <button
+                  onClick={() => toggleIndex(index)}
+                  className="w-full text-left flex items-center justify-between px-6 py-4 group"
+                >
+                  <h3 className="text-lg font-semibold text-indigo-700 group-hover:underline">
+                    {faq.question || '❓ Question manquante'}
+                  </h3>
 
-                {faq.answer ? (
-                  <PrismicRichText
-                    field={faq.answer}
-                    components={{
-                      paragraph: ({ children }) => (
-                        <p className="text-gray-700">{children}</p>
-                      ),
-                    }}
-                  />
-                ) : (
-                  <p className="text-gray-400 italic">Réponse manquante</p>
-                )}
+                  {/* Chevron icon */}
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ChevronDown className="text-indigo-500" />
+                  </motion.div>
+                </button>
+
+                {/* Answer */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial="collapsed"
+                      animate="open"
+                      exit="collapsed"
+                      variants={{
+                        open: { height: 'auto', opacity: 1 },
+                        collapsed: { height: 0, opacity: 0 },
+                      }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden px-6"
+                    >
+                      <div className="pb-6 pt-0">
+                        {faq.answer ? (
+                          <PrismicRichText
+                            field={faq.answer}
+                            components={{
+                              paragraph: ({ children }) => (
+                                <p className="text-gray-700 leading-relaxed">
+                                  {children}
+                                </p>
+                              ),
+                            }}
+                          />
+                        ) : (
+                          <p className="text-gray-400 italic">Réponse manquante</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            ))}
-          </div>
-        )}
+            )
+          })}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq

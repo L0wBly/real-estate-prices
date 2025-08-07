@@ -1,32 +1,40 @@
-import { FC } from "react";
-import { PrismicLink, SliceComponentProps } from "@prismicio/react";
-import { Content } from "@prismicio/client";
+'use client'
 
-export type CtaBlockProps = SliceComponentProps<Content.CtaBlockSlice>;
+import { FC } from 'react'
+import Link from 'next/link'
+import { SliceComponentProps } from '@prismicio/react'
+import { Content, FilledLinkToWebField } from '@prismicio/client'
+
+type CtaBlockProps = SliceComponentProps<Content.CtaBlockSlice>
 
 const CtaBlock: FC<CtaBlockProps> = ({ slice }) => {
-  const { cta_text, contact } = slice.primary;
+  const { cta_text, contact } = slice.primary
+  const safeContact = contact as FilledLinkToWebField & { text?: string }
 
   return (
-    <section className="py-16 bg-indigo-600 text-white text-center">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">
-          {cta_text || "Vous avez un projet ?"}
-        </h2>
+    <section className="relative bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-600 py-24 overflow-hidden text-center">
+      {/* Glow / flou décoratif */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-400 opacity-30 blur-3xl rounded-full -z-10" />
 
-        {contact ? (
-          <PrismicLink
-            field={contact}
-            className="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-xl shadow hover:bg-indigo-50 transition"
+      <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
+        {typeof cta_text === 'string' && cta_text.length > 0 && (
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white drop-shadow-md">
+            {cta_text}
+          </h2>
+        )}
+
+        {safeContact?.url && (
+          <Link
+            href={safeContact.url}
+            target={safeContact.target ?? '_self'}
+            className="inline-block mt-4 px-8 py-3 bg-white text-indigo-700 font-semibold rounded-xl shadow-md hover:shadow-lg hover:bg-gray-100 transition"
           >
-            Nous contacter
-          </PrismicLink>
-        ) : (
-          <p className="text-red-200 italic">Lien de contact manquant</p>
+            {safeContact.text || 'Nous contacter'}
+          </Link>
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CtaBlock;
+export default CtaBlock
