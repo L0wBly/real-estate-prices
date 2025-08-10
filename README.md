@@ -6,10 +6,10 @@
 ![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
 
 ## 🔗 Live Demo
-[**View the website**](https://your-vercel-url.vercel.app) — hosted on Vercel.
+[**View the website**](https://real-estate-prices-git-main-l0wblys-projects.vercel.app/paris_15) — hosted on Vercel.
 
 ## 📸 Screenshot
-![Real Estate Landing Page Screenshot](public/screenshot.png)
+![Real Estate Landing Page Screenshot](public/images/image.png)
 
 ---
 
@@ -154,8 +154,3 @@ The site is designed for deployment on **Vercel**:
 3. Commit changes (`git commit -m 'Add feature'`)
 4. Push to branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-This project is licensed under the **MIT License** — feel free to use, modify, and distribute it.
