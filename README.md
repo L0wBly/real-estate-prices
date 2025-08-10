@@ -9,8 +9,8 @@
 [**View the website**](https://real-estate-prices-git-main-l0wblys-projects.vercel.app/paris_15) — hosted on Vercel.
 
 ## 📸 Screenshot
-![Real Estate Landing Page Screenshot](public/images/image.png)
-
+![Real Estate Landing Page Screenshot](public/images/page.png.png)
+![Prismic Page Type](public/images/pagetype.png)
 ---
 
 ## 📌 Project Overview
