@@ -147,7 +147,7 @@ export type AllDocumentTypes = RealEstatePricesDocument;
  */
 export interface CtaBlockSliceDefaultPrimary {
   /**
-   * Demandez une estimation ! field in *CtaBlock → Default → Primary*
+   * Request an estimate! field in *CtaBlock → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*

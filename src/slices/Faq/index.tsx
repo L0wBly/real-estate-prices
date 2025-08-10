@@ -20,7 +20,7 @@ const Faq: FC<FaqProps> = ({ slice }) => {
     <section className="relative py-28 bg-gradient-to-br from-white via-gray-50 to-white">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-          Questions fréquentes
+          Frequently Asked Questions
         </h2>
 
         <div className="space-y-6">

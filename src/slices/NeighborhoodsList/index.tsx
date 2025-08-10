@@ -32,7 +32,7 @@ const NeighborhoodsList: FC<NeighborhoodsListProps> = ({ slice }) => {
 
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mb-16 tracking-tight">
-          Quartiers les plus demandés
+          Most Popular Neighborhoods
         </h2>
 
         {Array.isArray(neighborhoods) && neighborhoods.length > 0 && (
@@ -73,7 +73,7 @@ const NeighborhoodsList: FC<NeighborhoodsListProps> = ({ slice }) => {
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-gray-900">{title}</h3>
                     <p className="text-sm text-gray-500 mt-2">
-                      Quartier attractif du 15ᵉ
+                      Popular neighborhood in the 15th district
                     </p>
                   </div>
                 </motion.div>

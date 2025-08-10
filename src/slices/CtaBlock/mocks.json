@@ -5,12 +5,12 @@
 		"primary": {
 			"cta_text": {
 				"__TYPE__": "FieldContent",
-				"value": "seen",
+				"value": "refer",
 				"type": "Text"
 			},
 			"contact": {
-				"__TYPE__": "LinkContent",
 				"key": "865f8fbd-83c9-49a9-aa62-08a78913b8e9",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com",

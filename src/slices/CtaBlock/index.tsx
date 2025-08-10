@@ -29,7 +29,7 @@ const CtaBlock: FC<CtaBlockProps> = ({ slice }) => {
             target={safeContact.target ?? '_self'}
             className="inline-block mt-4 px-8 py-3 bg-white text-indigo-700 font-semibold rounded-xl shadow-md hover:shadow-lg hover:bg-gray-100 transition"
           >
-            {safeContact.text || 'Nous contacter'}
+            {safeContact.text || 'Contact Us'}
           </Link>
         )}
       </div>

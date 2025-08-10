@@ -7,7 +7,7 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from "rec
 export type VariationBlockProps = SliceComponentProps<Content.VariationBlockSlice>;
 
 const VariationBlock: FC<VariationBlockProps> = ({ slice }) => {
-  // Simulated data – replace with real API/prismic data later
+  // Simulated data – replace with real API/Prismic data later
   const variationData = [
     { month: "Sept", value: 0 },
     { month: "Oct", value: 0.4 },
@@ -27,11 +27,11 @@ const VariationBlock: FC<VariationBlockProps> = ({ slice }) => {
     <section className="bg-white py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Variation des prix sur 12 mois
+          Price Variation Over 12 Months
         </h2>
 
         <p className="text-sm text-gray-500 mb-8">
-          Données simulées entre septembre 2024 et août 2025
+          Simulated data from September 2024 to August 2025
         </p>
 
         <div className="bg-gray-50 rounded-xl shadow-sm p-4">
