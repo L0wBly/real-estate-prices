@@ -38,7 +38,7 @@ const Faq: FC<FaqProps> = ({ slice }) => {
                   onClick={() => toggleIndex(index)}
                   className="w-full text-left flex items-center justify-between px-6 py-4 group"
                 >
-                  <h3 className="text-lg font-semibold text-indigo-700 group-hover:underline">
+                  <h3 className="text-lg font-semibold text-indigo-600 group-hover:underline">
                     {faq.question || '❓ Question manquante'}
                   </h3>
 
