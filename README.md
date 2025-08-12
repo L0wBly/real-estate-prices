@@ -121,7 +121,7 @@ npm run dev
 │  │  ├─ VariationBlock/
 │  │  ├─ NeighborhoodsList/
 │  │  ├─ Faq/
-│  │  └─ CtaBlock/
+│  │  ├─ CtaBlock/
 │  │  └─ BackToTop/
 │  ├─ styles/                # Tailwind global styles
 │  └─ lib/                   # Prismic client and helpers
