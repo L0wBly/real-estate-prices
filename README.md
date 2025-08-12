@@ -33,6 +33,7 @@ The layout and content are split into reusable **Slices**, enabling flexible con
   - `NeighborhoodsList` — Styled list of neighborhoods
   - `Faq` — Frequently Asked Questions
   - `CtaBlock` — Call-to-action button with external link
+  - `BackToTop` — Call-to-action button to go on the top of the page
 - **Dynamic Routing**: `src/app/[uid]/page.tsx`
 - **Tailwind CSS** for modern, responsive styling
 - **SEO Optimizations**: Meta tags, Open Graph, and clean URLs
@@ -121,6 +122,7 @@ npm run dev
 │  │  ├─ NeighborhoodsList/
 │  │  ├─ Faq/
 │  │  └─ CtaBlock/
+│  │  └─ BackToTop/
 │  ├─ styles/                # Tailwind global styles
 │  └─ lib/                   # Prismic client and helpers
 ├─ prismicio-types.d.ts      # Generated types from Prismic
