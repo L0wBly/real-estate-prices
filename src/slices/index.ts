@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  back_to_top: dynamic(() => import("./BackToTop")),
   cta_block: dynamic(() => import("./CtaBlock")),
   faq: dynamic(() => import("./Faq")),
   neighborhoods_list: dynamic(() => import("./NeighborhoodsList")),

@@ -1,0 +1,18 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"enabled": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"back_to_top": {
+				"__TYPE__": "FieldContent",
+				"value": "continued",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,35 @@
+{
+  "id": "back_to_top",
+  "type": "SharedSlice",
+  "name": "BackToTop",
+  "description": "BackToTop",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "enabled": {
+          "type": "Boolean",
+          "config": {
+            "label": "enabled",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
+        "back_to_top": {
+          "type": "Text",
+          "config": {
+            "label": "Back to top",
+            "placeholder": "Back to top"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

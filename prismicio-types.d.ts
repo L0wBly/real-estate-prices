@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type RealEstatePricesDocumentDataSlicesSlice =
+  | BackToTopSlice
   | CtaBlockSlice
   | FaqSlice
   | NeighborhoodsListSlice
@@ -141,6 +142,62 @@ export type RealEstatePricesDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = RealEstatePricesDocument;
+
+/**
+ * Primary content in *BackToTop → Default → Primary*
+ */
+export interface BackToTopSliceDefaultPrimary {
+  /**
+   * enabled field in *BackToTop → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: back_to_top.default.primary.enabled
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  enabled: prismic.BooleanField;
+
+  /**
+   * Back to top field in *BackToTop → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Back to top
+   * - **API ID Path**: back_to_top.default.primary.back_to_top
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  back_to_top: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BackToTop Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BackToTopSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BackToTopSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BackToTop*
+ */
+type BackToTopSliceVariation = BackToTopSliceDefault;
+
+/**
+ * BackToTop Shared Slice
+ *
+ * - **API ID**: `back_to_top`
+ * - **Description**: BackToTop
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BackToTopSlice = prismic.SharedSlice<
+  "back_to_top",
+  BackToTopSliceVariation
+>;
 
 /**
  * Primary content in *CtaBlock → Default → Primary*
@@ -512,6 +569,10 @@ declare module "@prismicio/client" {
       RealEstatePricesDocumentData,
       RealEstatePricesDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BackToTopSlice,
+      BackToTopSliceDefaultPrimary,
+      BackToTopSliceVariation,
+      BackToTopSliceDefault,
       CtaBlockSlice,
       CtaBlockSliceDefaultPrimary,
       CtaBlockSliceVariation,

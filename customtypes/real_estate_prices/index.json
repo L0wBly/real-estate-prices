@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "back_to_top": {
+              "type": "SharedSlice"
+            },
             "cta_block": {
               "type": "SharedSlice"
             },

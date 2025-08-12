@@ -14,7 +14,7 @@ const TitleSection: FC<TitleSectionProps> = ({ slice }) => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen w-full overflow-hidden">
+    <section id="top" className="relative min-h-[90vh] sm:min-h-screen w-full overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 -z-10 bg-center bg-cover blur-[1px] scale-110"
